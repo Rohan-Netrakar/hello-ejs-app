@@ -11,8 +11,19 @@
         <h1><%= title %></h1>
         <p>Welcome to your first Express + EJS app with CSS!</p>
 
+        <form action="/add" method="POST">
+            <input type="text" name="name" placeholder="Enter your name" required />
+            <button type="submit">Add Name</button>
+        </form>
 
-        <p>add for cheaking new commets</p>
+        <h2>All Names</h2>
+        <ul>
+            <% users.forEach(user => { %>
+                <li><%= user.name %></li>
+            <% }) %>
+        </ul>
+
+        <p>add for checking new comments</p>
     </div>
 </body>
 </html>
